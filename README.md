@@ -15,7 +15,7 @@ const myObject = {
 }
 ```
 </details>
-
+  
 There are 2 ways to get information out of an object:
 
 <details>
@@ -29,3 +29,50 @@ myObject.property; // 'Value!'
 myObject["obnoxious property"]; // [Function]
 ```
 </details>
+  
+If you want to make multiple similar objects using a template you can create an object constructor (which is a function):
+
+<details>
+  <summary>Constructor/ object template</summary>
+
+```javascript
+function Player(name, marker) {
+  this.name = name;
+  this.marker = marker;
+}
+```
+</details>
+  
+You can use an object constructor by calling the function with the keyword new:
+
+<details>
+  <summary>Making an object with constructor</summary>
+
+```javascript
+const player = new Player('steve', 'X');
+console.log(player.name); // 'steve'
+// The new keyword will make a new object instance using that constructor.
+```
+</details>
+  
+To prevent calling a constructor without the new keyword we can use the new.target meta property:
+
+<details>
+  <summary>Safeguarding constructors</summary>
+
+```javascript
+function Player(name, marker) {
+  if (!new.target) {
+    throw Error("You must use the 'new' operator to call the constructor");
+  }
+  this.name = name;
+  this.marker = marker;
+  this.sayName = function() {
+    console.log(this.name)
+  };
+}
+// Without the throw error, you could accidentally not make a new object but rather add properties/functions to the global object or do something weird as 'this' in 'this.name' for example could point to the global object instead of the desired object.
+// 
+```
+</details>
+  
