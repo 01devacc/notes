@@ -15,7 +15,8 @@ const myObject = {
 }
 ```
 </details>
-  
+<br>  
+
 There are 2 ways to get information out of an object:
 
 <details>
@@ -29,7 +30,8 @@ myObject.property; // 'Value!'
 myObject["obnoxious property"]; // [Function]
 ```
 </details>
-  
+<br> 
+
 If you want to make multiple similar objects using a template you can create an object constructor (which is a function):
 
 <details>
@@ -42,8 +44,9 @@ function Player(name, marker) {
 }
 ```
 </details>
-  
-You can use an object constructor by calling the function with the keyword new:
+<br> 
+
+You can use an object constructor by calling the function with the keyword **new**:
 
 <details>
   <summary>Making an object with constructor</summary>
@@ -54,8 +57,9 @@ console.log(player.name); // 'steve'
 // The new keyword will make a new object instance using that constructor.
 ```
 </details>
-  
-To prevent calling a constructor without the new keyword we can use the new.target meta property:
+<br> 
+
+To prevent calling a constructor without the **new** keyword we can use the **new.target** meta property:
 
 <details>
   <summary>Safeguarding constructors</summary>
@@ -75,4 +79,6 @@ function Player(name, marker) {
 // 
 ```
 </details>
-  
+<br> 
+
+
